@@ -4,8 +4,7 @@ matrix:
         - python: 3.7
           dist: xenial
           sudo: true
-os: osx
-
+          
 services:
   - docker
 
