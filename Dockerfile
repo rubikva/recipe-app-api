@@ -1,14 +1,7 @@
-FROM python:3.7-alpine
+FROM python:3
 LABEL maintainer="Ruba Vitalii"
-
-ENV PYTHONUNBUFFERED 1
-COPY ./requirements.txt /requirements.txt
-RUN pip install -r /requirements.txt
-
-RUN mkdir /app
+ENV PYTHONUNBUFFERED=1
 WORKDIR /app
-COPY ./app /app
-COPY . .
-
-RUN adduser -D user
-USER user
+COPY requirements.txt /app/
+RUN pip install -r requirements.txt
+COPY . /app/
